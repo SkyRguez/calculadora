@@ -42,10 +42,20 @@ function onClick(evento) {
       console.log(primero, segundo, operador);
       switch (clickear) {
         case "÷":
-          segundo = primero;
-          primero = "";
           const resultDiv = parseInt(primero) / parseInt(segundo);
           result.target.innerText = String(resultDiv);
+          break;
+        case "×":
+          const resultPor = parseInt(primero) / parseInt(segundo);
+          result.target.innerText = String(resultPor);
+          break;
+        case "-":
+          const resultMenos = parseInt(primero) / parseInt(segundo);
+          result.target.innerText = String(resultMenos);
+          break;
+        case "+":
+          const resultMas = parseInt(primero) / parseInt(segundo);
+          result.target.innerText = String(resultMas);
           break;
       }
       break;
