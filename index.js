@@ -32,13 +32,22 @@ function onClick(evento) {
     case "←":
       borrar(clickear);
       break;
+    case "=":
+      console.log(primero, segundo, operador);
+      const resultado = parseInt(primero) + parseInt(segundo);
+      result.innerText = String(resultado);
+      break;
   }
 }
 
 function mantenerNum(value) {
-  primero += value;
-
-  result.innerText = primero;
+  if (operador === "") {
+    primero += value;
+    result.innerText = primero;
+  } else {
+    segundo += value;
+    result.innerText = segundo;
+  }
 }
 
 function borrar(value) {
