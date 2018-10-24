@@ -1,15 +1,10 @@
-const buttonC = document.querySelector(".botonC");
-buttonC.addEventListener("click", eliminar);
+const container = document.querySelector(".calc");
+container.addEventListener("click", onClick);
 
-/*HACER QUE AL PRESIONAR BOTÓN C NOS DEVUELVA 0 EN LA PANTALLA DE RESULTADO*/
-
-function eliminar(evento1) {
-  const eliminado = erase(evento1.target.innerText);
+function onClick(evento) {
+  const botones = evento.target.innerText;
+  console.log(`clickado botón ${botones}`);
 
   const result = document.querySelector(".results");
-  result.innerText = eliminado;
-}
-
-function erase(n) {
-  return (n = 0);
+  result.innerText = botones;
 }
