@@ -29,23 +29,35 @@ function onClick(evento) {
     case "0":
       mantenerNum(clickear);
       break;
+    case "÷":
+    case "×":
+    case "-":
+    case "+":
+      gestionarOperador(clickear);
+      break;
     case "←":
       borrar(clickear);
       break;
     case "=":
       console.log(primero, segundo, operador);
-      const resultado = parseInt(primero) + parseInt(segundo);
-      result.innerText = String(resultado);
+      switch (clickear) {
+        case "÷":
+          segundo = primero;
+          primero = "";
+          const resultDiv = parseInt(primero) / parseInt(segundo);
+          result.target.innerText = String(resultDiv);
+          break;
+      }
       break;
   }
 }
 
 function mantenerNum(value) {
   if (operador === "") {
-    primero += value;
+    primero = primero + value;
     result.innerText = primero;
   } else {
-    segundo += value;
+    segundo = segundo + value;
     result.innerText = segundo;
   }
 }
@@ -61,4 +73,9 @@ function borrar(value) {
 
 function eliminar() {
   result.innerText = 0;
+}
+
+function gestionarOperador(value) {
+  console.log(`que es value? ${value}`);
+  operador = value;
 }
