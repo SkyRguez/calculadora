@@ -44,25 +44,29 @@ function onClick(evento) {
 
 function igual() {
   console.log(primero, segundo, operador);
+  let resultado;
   switch (operador) {
     case "÷":
-      const resultDiv = parseInt(primero) / parseInt(segundo);
-      result.innerText = String(resultDiv);
+      resultado = parseInt(primero) / parseInt(segundo);
+      result.innerText = String(resultado);
       break;
     case "×":
-      const resultPor = parseInt(primero) * parseInt(segundo);
-      result.innerText = String(resultPor);
+      resultado = parseInt(primero) * parseInt(segundo);
+      result.innerText = String(resultado);
       break;
     case "-":
-      const resultMenos = parseInt(primero) - parseInt(segundo);
-      result.innerText = String(resultMenos);
+      resultado = parseInt(primero) - parseInt(segundo);
+      result.innerText = String(resultado);
       break;
     case "+":
-      const resultMas = parseInt(primero) + parseInt(segundo);
-      console.log(`Resultado suma: ${resultMas}`);
-      result.innerText = String(resultMas);
+      resultado = parseInt(primero) + parseInt(segundo);
+      console.log(`Resultado suma: ${resultado}`);
+      result.innerText = String(resultado);
       break;
   }
+  primero = resultado;
+  operador = "";
+  segundo = "";
 }
 
 function mantenerNum(value) {
@@ -94,6 +98,11 @@ function borrar(value) {
 }
 
 function eliminar() {
+  if (operador === "") {
+    primero = "";
+  } else {
+    segundo = "";
+  }
   result.innerText = 0;
 }
 
