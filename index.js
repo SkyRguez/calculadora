@@ -11,8 +11,6 @@ function onClick(evento) {
   const clickear = evento.target.innerText;
   console.log(`clickado botón ${clickear}`);
 
-  result.innerText = clickear;
-
   switch (clickear) {
     case "C":
       eliminar();
