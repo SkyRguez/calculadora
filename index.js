@@ -37,25 +37,30 @@ function onClick(evento) {
       borrar(clickear);
       break;
     case "=":
-      console.log(primero, segundo, operador);
-      switch (clickear) {
-        case "÷":
-          const resultDiv = parseInt(primero) / parseInt(segundo);
-          result.target.innerText = String(resultDiv);
-          break;
-        case "×":
-          const resultPor = parseInt(primero) / parseInt(segundo);
-          result.target.innerText = String(resultPor);
-          break;
-        case "-":
-          const resultMenos = parseInt(primero) / parseInt(segundo);
-          result.target.innerText = String(resultMenos);
-          break;
-        case "+":
-          const resultMas = parseInt(primero) / parseInt(segundo);
-          result.target.innerText = String(resultMas);
-          break;
-      }
+      igual();
+      break;
+  }
+}
+
+function igual() {
+  console.log(primero, segundo, operador);
+  switch (operador) {
+    case "÷":
+      const resultDiv = parseInt(primero) / parseInt(segundo);
+      result.innerText = String(resultDiv);
+      break;
+    case "×":
+      const resultPor = parseInt(primero) * parseInt(segundo);
+      result.innerText = String(resultPor);
+      break;
+    case "-":
+      const resultMenos = parseInt(primero) - parseInt(segundo);
+      result.innerText = String(resultMenos);
+      break;
+    case "+":
+      const resultMas = parseInt(primero) + parseInt(segundo);
+      console.log(`Resultado suma: ${resultMas}`);
+      result.innerText = String(resultMas);
       break;
   }
 }
