@@ -73,11 +73,20 @@ function mantenerNum(value) {
 }
 
 function borrar(value) {
-  primero = primero.slice(0, -1);
-  if (primero === "") {
-    result.innerText = "0";
+  if (operador === "") {
+    primero = primero.slice(0, -1);
+    if (primero === "") {
+      result.innerText = "0";
+    } else {
+      result.innerText = primero;
+    }
   } else {
-    result.innerText = primero;
+    segundo = segundo.slice(0, -1);
+    if (segundo === "") {
+      result.innerText = "0";
+    } else {
+      result.innerText = segundo;
+    }
   }
 }
 
